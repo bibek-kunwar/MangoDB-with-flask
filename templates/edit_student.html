@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+</head>
+<body>
+    <h1>Edit Student</h1>
+    
+    <form method="POST" action="{{ url_for('edit_student', student_id=student.id) }}">
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" value="{{ student.fname }}" required><br>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname" value="{{ student.lname }}" required><br>
+
+        <label for="facility">Facility:</label>
+        <input type="text" name="facility" value="{{ student.facility }}"><br>
+
+        <label for="contact1">Contact 1:</label>
+        <input type="text" name="contact1" value="{{ student.contact.contact1 }}"><br>
+
+        <label for="contact2">Contact 2:</label>
+        <input type="text" name="contact2" value="{{ student.contact.contact2 }}"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="{{ student.email }}"><br>
+
+        <button type="submit">Update Student</button>
+    </form>
+
+    <a href="{{ url_for('index') }}">Back to Student List</a>
+</body>
+</html>
